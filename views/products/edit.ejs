@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+    <%- include("../partials/navbar") %>
+
+    <div class="container" style="margin-top: 3rem;width: 80vw;">
+        
+
+                <form class="validated-form" action="/products/<%=product._id%>?_method=patch" method="post" style="max-width:70% ;margin: 10px auto;" novalidate>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Name" name ="product[name]" value="<%=product.name%>" aria-describedby="emailHelp" required>
+                      <div id="emailHelp" class="form-text">We'll never share your name with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="img" class="form-label">Image URL</label>
+                      <input type="text" class="form-control" id="img" placeholder="Img URL" value="<%=product.img%>" name ="product[img]" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="price" placeholder="Price" value="<%=product.price%>" name ="product[price]" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea   cols="30" rows="5" class="form-control" required name ="product[desc]"><%=product.name%></textarea>
+                      </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+          
+    </div>
+    <%-include("../partials/footer")%>
